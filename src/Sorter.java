@@ -120,38 +120,13 @@ public class Sorter {
         return elapsed;
     }
 
-    public long heapifySort(int[] testArray) {
+    public long heapSortCustom(int[] testArray, int){
         int[] sampleArray = new int[testArray.length];
         System.arraycopy(testArray, 0, sampleArray, 0, testArray.length);
         long startTime = System.currentTimeMillis();
 
-
-
-
         long elapsed = System.currentTimeMillis() - startTime;
         return elapsed;
-    }
-
-    private void heapifySink(int curIndex, int[] sampleArray){
-        while(curIndex < sampleArray.length){
-            int leftChildIndex = curIndex * 2 + 1;
-            int rightChildIndex = curIndex * 2 + 2;
-            int smallestChildIndex = leftChildIndex;
-
-            if(rightChildIndex<leftChildIndex && sampleArray[rightChildIndex] < sampleArray[leftChildIndex]){
-                smallestChildIndex = rightChildIndex;
-            }
-
-            if(sampleArray[curIndex] > sampleArray[smallestChildIndex]){
-                swap(curIndex, smallestChildIndex, sampleArray);
-            } else {
-                break;
-            }
-            curIndex = smallestChildIndex;
-        }
-    }
-
-    private void swap(int curIndex,int smallestIndex, int[] sampleArray){
 
     }
 
